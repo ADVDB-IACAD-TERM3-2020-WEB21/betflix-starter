@@ -3,3 +3,9 @@ A Netflix clone that uses MongoDB.
 
 ## Prerequisites
 You need to have Git and Node installed.
+
+## Assignment Todos
+- [ ] Import Mongoose
+- [ ] Connect to Mongo
+- [ ] Create a Movies model
+- [ ] Get all Movies from model
