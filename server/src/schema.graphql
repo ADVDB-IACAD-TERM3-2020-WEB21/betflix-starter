@@ -3,6 +3,5 @@ type Movie {
 }
 
 type Query {
-  hello: String
   movies: [Movie!]!
 }

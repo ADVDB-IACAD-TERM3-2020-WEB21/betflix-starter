@@ -4,11 +4,8 @@ const getMovieList = async () => {
 
 const resolvers = {
     Query: {
-      hello: () => 'world!',
       movies: async () =>  {
         const movieList = await getMovieList()
-        console.log(movieList)
-
         return movieList
       }
     },
