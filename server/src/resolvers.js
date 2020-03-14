@@ -1,5 +1,11 @@
+// TODO: Import Mongoose here
+// TODO: Connect to mongo here
+
+// TODO: Replace `{}` with actual Movie model
+const Movie = {}
+
 const getMovieList = async () => {
-  // TODO: Get movies here
+  return await Movie.find({})
 }
 
 const resolvers = {

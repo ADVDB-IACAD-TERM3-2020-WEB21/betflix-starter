@@ -7,5 +7,5 @@ You need to have Git and Node installed.
 ## Assignment Todos
 - [ ] Import Mongoose
 - [ ] Connect to Mongo
-- [ ] Create a Movies model
+- [ ] Create a `Movie` model
 - [ ] Get all Movies from model
