@@ -394,28 +394,6 @@ webpackContext.id = "./src sync recursive ^\\.\\/(schema|schema\\/index)\\.(gql|
 
 /***/ }),
 
-/***/ "./src/models/Movie.js":
-/*!*****************************!*\
-  !*** ./src/models/Movie.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-const MOVIE_SCHEMA = {
-  title: String
-};
-
-const generateMovieModel = mongoose => {
-  const Movie = mongoose.model('Movie', MOVIE_SCHEMA);
-  return Movie;
-};
-
-module.exports = {
-  generateMovieModel
-};
-
-/***/ }),
-
 /***/ "./src/resolvers.js":
 /*!**************************!*\
   !*** ./src/resolvers.js ***!
@@ -425,31 +403,19 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const mongoose = __webpack_require__(/*! mongoose */ "mongoose");
-
-const MONGO_CONNECTION_STRING = 'mongodb://localhost:27017/test';
-
-const {
-  generateMovieModel
-} = __webpack_require__(/*! ./models/Movie */ "./src/models/Movie.js");
-
-mongoose.connect(MONGO_CONNECTION_STRING, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-const Movie = generateMovieModel(mongoose);
+// TODO: Import Mongoose here
+// TODO: Connect to mongo here
+// TODO: Replace `{}` with actual Movie model
+const Movie = {};
 
 const getMovieList = async () => {
-  const movies = await Movie.find({});
-  return movies;
+  return await Movie.find({});
 };
 
 const resolvers = {
   Query: {
-    hello: () => 'world!',
     movies: async () => {
       const movieList = await getMovieList();
-      console.log(movieList);
       return movieList;
     }
   }
@@ -466,8 +432,8 @@ const resolvers = {
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"ObjectTypeDefinition","name":{"kind":"Name","value":"Movie"},"interfaces":[],"directives":[],"fields":[{"kind":"FieldDefinition","name":{"kind":"Name","value":"title"},"arguments":[],"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},"directives":[]}]},{"kind":"ObjectTypeDefinition","name":{"kind":"Name","value":"Query"},"interfaces":[],"directives":[],"fields":[{"kind":"FieldDefinition","name":{"kind":"Name","value":"hello"},"arguments":[],"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}},"directives":[]},{"kind":"FieldDefinition","name":{"kind":"Name","value":"movies"},"arguments":[],"type":{"kind":"NonNullType","type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Movie"}}}}},"directives":[]}]}],"loc":{"start":0,"end":84}};
-    doc.loc.source = {"body":"type Movie {\n  title: String!\n}\n\ntype Query {\n  hello: String\n  movies: [Movie!]!\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"ObjectTypeDefinition","name":{"kind":"Name","value":"Movie"},"interfaces":[],"directives":[],"fields":[{"kind":"FieldDefinition","name":{"kind":"Name","value":"title"},"arguments":[],"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},"directives":[]}]},{"kind":"ObjectTypeDefinition","name":{"kind":"Name","value":"Query"},"interfaces":[],"directives":[],"fields":[{"kind":"FieldDefinition","name":{"kind":"Name","value":"movies"},"arguments":[],"type":{"kind":"NonNullType","type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Movie"}}}}},"directives":[]}]}],"loc":{"start":0,"end":68}};
+    doc.loc.source = {"body":"type Movie {\n  title: String!\n}\n\ntype Query {\n  movies: [Movie!]!\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -579,17 +545,6 @@ module.exports = require("friendly-errors-webpack-plugin");
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
-
-/***/ }),
-
-/***/ "mongoose":
-/*!***************************!*\
-  !*** external "mongoose" ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("mongoose");
 
 /***/ }),
 
