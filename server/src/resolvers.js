@@ -7,8 +7,7 @@ mongoose.connect(MONGO_CONNECTION_STRING, {useNewUrlParser: true, useUnifiedTopo
 const Movie = generateMovieModel(mongoose)
 
 const getMovieList = async () => {
-  const movies = await Movie.find({})
-  return movies
+  // TODO: Get movies here
 }
 
 const resolvers = {
