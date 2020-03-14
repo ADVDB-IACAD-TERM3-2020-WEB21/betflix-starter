@@ -1,5 +1,9 @@
 const getMovieList = () => {
-    return [{"_id":{"$oid":"5e630851836dbc1b0b0e91c9"},"title":"Castlevania","type":"series","genres":["Fantasy","Animated"],"videos":[{"title":"Ep 1","filename":"castlevania/s01e01.mp4"}]}, {"_id":{"$oid":"5e630851836dbc1b0b0e91c9"},"title":"Castlevania","type":"series","genres":["Fantasy","Animated"],"videos":[{"title":"Ep 1","filename":"castlevania/s01e01.mp4"}]}]
+    // TODO: Call the API here
+    return [
+        {"_id":{"$oid":"5e630851836dbc1b0b0e91c9"},"title":"Castlevania","type":"series","genres":["Fantasy","Animated"],"videos":[{"title":"Ep 1","filename":"castlevania/s01e01.mp4"}]},
+        {"_id":{"$oid":"5e630851836dbc1b0b0e91c9"},"title":"Fullmetal Alchemist","type":"series","genres":["Fantasy","Animated"],"videos":[{"title":"Ep 1","filename":"castlevania/s01e01.mp4"}]}
+    ]
 }
 
 const movies = getMovieList()
