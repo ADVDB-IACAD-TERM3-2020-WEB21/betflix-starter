@@ -16,3 +16,11 @@ You need to have Git and Node installed.
 - [ ] Connect to Mongo
 - [ ] Create a `Movie` model
 - [ ] Get all Movies from model
+
+## How to make changes
+
+1. `git checkout -b assignment`
+2. Make your code changes.
+3. `git add -A`
+4. `git  commit -m "your comment here"`
+5. `git push origin assignment`
